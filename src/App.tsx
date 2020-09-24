@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Global } from '@emotion/core';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Pokemons from './containers/Pokemons';
+import rootStyles from './rootStyles';
+import { Details } from './components/Details';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Global styles={rootStyles} />
+      <Switch>
+        <Route component={Pokemons} path="/" exact />
+        <Route component={Details} path="/:id" exact />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
