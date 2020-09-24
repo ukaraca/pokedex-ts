@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import VisibilitySensor from 'react-visibility-sensor';
 import { spriteEndpoint } from '../../services/consts';
 import { Stat } from '../../types/pokemon';
+import { Img } from '../Img';
 import Container from './style';
 
 interface Pokemon {
@@ -18,7 +19,7 @@ export const Pokemon = ({ data }: Pokemon) => {
       <Container className="m1 p1">
         {visible && (
           <>
-            <img src={spriteEndpoint(data.id)} alt={data.name} />
+            <Img src={spriteEndpoint(data.id)} alt={data.name} />
             <span className="nes-text is-primary">{data.name}</span>
             <div className="mb1">
               <span className="mr3">
