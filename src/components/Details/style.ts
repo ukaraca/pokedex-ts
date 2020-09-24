@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 
 const Container = styled.section`
-  height: 100vh;
+  min-height: 100vh;
+
   .nes-container {
     width: 75%;
     margin-left: auto;
@@ -14,7 +15,11 @@ const Container = styled.section`
     width: 100%;
     position: relative;
     display: flex;
+
     justify-content: space-between;
+  }
+  .nes-badge {
+    width: 300px;
   }
 `;
 

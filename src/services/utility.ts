@@ -18,4 +18,9 @@ const getUniqueItems = (arr: string[]) => {
   return uniqueItems;
 };
 
-export { splitIdFromURL, getUniqueItems };
+const randomArrayElement = (list: string[]) => {
+  const randomElement = list[Math.floor(Math.random() * list.length)];
+  return randomElement;
+};
+
+export { splitIdFromURL, getUniqueItems, randomArrayElement };

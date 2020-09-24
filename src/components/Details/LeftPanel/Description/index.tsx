@@ -18,6 +18,7 @@ export const Description = ({ descriptions }: DescriptionProps) => {
     }
     setIndex(newIndex);
   };
+
   return (
     <Container>
       <div className="nes-container is-rounded screen flex items-center content-stretch">
