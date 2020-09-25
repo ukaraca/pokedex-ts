@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { AppContext } from '../../../hooks/usePokemonListAPI';
-import Container from './style';
 
 const PokemonList = () => {
   const history = useHistory();
@@ -27,7 +26,7 @@ const PokemonList = () => {
   };
 
   return (
-    <Container>
+    <div className="pokemon-list">
       <div className={`nes-select ${success ? 'is-success' : ''}`}>
         <select onChange={(e) => onChangeHandler(e.target.value)}>
           <option>My Pokémons</option>
@@ -41,7 +40,7 @@ const PokemonList = () => {
           ) : null}
         </select>
       </div>
-    </Container>
+    </div>
   );
 };
 

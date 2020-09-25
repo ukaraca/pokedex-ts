@@ -71,6 +71,21 @@ const globalCSS = css`
     width: 300px;
   }
 
+  .pokemon-list {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  @media (max-width: 768px) {
+    .pokemon-list {
+      width: 100%;
+      height: 75px;
+      top: 60px;
+    }
+  }
+
   @media (min-width: 768px) {
     .container {
       width: 750px;

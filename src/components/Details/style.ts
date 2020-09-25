@@ -19,6 +19,15 @@ const Container = styled.section`
     justify-content: space-between;
   }
 
+  @media (max-width: 768px) {
+    .nes-container {
+      width: 100%;
+    }
+    .pokemon-list {
+      top: -60px;
+    }
+  }
+
   @media (max-width: 1024px) {
     margin-top: 50px !important;
   }
