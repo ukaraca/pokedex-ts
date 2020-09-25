@@ -10,7 +10,7 @@ import { PokemonListDetails } from './components/List/PokemonListDetails';
 const App: React.FC = () => {
   return (
     <AppProvider>
-      <Router basename="pokedex-ts/">
+      <Router>
         <Global styles={rootStyles} />
         <Switch>
           <Route component={Pokemons} path="/" exact />
