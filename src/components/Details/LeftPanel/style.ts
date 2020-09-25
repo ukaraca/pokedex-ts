@@ -3,10 +3,10 @@ import styled from '@emotion/styled';
 const Container = styled.div`
   .nes-container {
     margin: 0;
-    width: 90%;
+    width: 100%;
   }
   .buttons {
-    width: 90%;
+    width: 100%;
   }
   .screen {
     padding-right: 0.5rem;
@@ -16,6 +16,7 @@ const Container = styled.div`
   p {
     height: 200px;
     overflow-y: auto;
+    overflow-x: hidden;
   }
 `;
 

@@ -1,105 +1,90 @@
 import styled from '@emotion/styled';
 
-interface LoadingProps {
-  background?: boolean;
-}
+const Container = styled.div`
+  width: 12rem;
+  height: 12rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
 
-const Container = styled.div<LoadingProps>`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  .pokeball {
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 100px;
-    width: 100px;
-    background: #ef4036;
-    border-radius: 50% 50%;
-    overflow: hidden;
-    padding: 0px;
-    border: 2.5px solid #666;
-  }
-  .glow {
-    top: 4.5px;
-    left: 13px;
-    background: white;
-    height: 32.5px;
-    width: 20px;
-    border-radius: 50%;
-    -webkit-transform: rotate(52deg);
-    transform: rotate(52deg);
-  }
-  .lower-half {
-    position: absolute;
-    margin: 0px;
-    top: 42.5px;
-    left: -115px;
-    height: 300px;
-    width: 300px;
-    background: none;
-    border-radius: 50%;
-    z-index: 4;
-    border: 12.5px solid #666;
-  }
-  .lh2 {
-    background: white;
-    z-index: 1;
-  }
-  .circle-out {
-    position: absolute;
-    top: 38px;
-    left: 40px;
-    background: white;
-    height: 26px;
-    width: 26px;
-    border-radius: 50%;
-    border: 7.5px solid #666;
-    z-index: 10;
-  }
-  .circle-in {
-    position: absolute;
-    height: 17.5px;
-    width: 17.5px;
-    border: 1.6px solid #666;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    -webkit-animation: glow 0.8s ease-in-out infinite;
-    animation: glow 0.8s ease-in-out infinite;
-  }
-  .shadow {
-    position: absolute;
-    left: 11px;
-    top: -5px;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    background: transparent;
-    box-shadow: -6px 44px 0px 7px rgba(0, 0, 0, 0.2);
-    z-index: 2;
-  }
-  @-webkit-keyframes glow {
-    0%,
-    100% {
-      background: rgba(255, 0, 0, 0.4);
-    }
-    50% {
-      background: white;
-    }
-  }
-  @keyframes glow {
-    0%,
-    100% {
-      background: rgba(255, 0, 0, 0.4);
-    }
-    50% {
-      background: white;
-    }
+  .pixel {
+    width: 1rem;
+    height: 1rem;
+    box-shadow: 
+    /* row 1 */ 0rem 0rem 0 -0.05rem #fff,
+      1rem 0rem 0 -0.05rem #fff, 2rem 0rem 0 -0.05rem #fff,
+      3rem 0rem 0 -0.05rem #fff, 4rem 0rem 0 -0.05rem #222,
+      5rem 0rem 0 -0.05rem #222, 6rem 0rem 0 -0.05rem #222,
+      7rem 0rem 0 -0.05rem #222, 8rem 0rem 0 -0.05rem #fff,
+      9rem 0rem 0 -0.05rem #fff, 10rem 0rem 0 -0.05rem #fff,
+      11rem 0rem 0 -0.05rem #fff, /* row 2 */ 0rem 1rem 0 -0.05rem #fff,
+      1rem 1rem 0 -0.05rem #fff, 2rem 1rem 0 -0.05rem #222,
+      3rem 1rem 0 -0.05rem #222, 4rem 1rem 0 -0.05rem #f00,
+      5rem 1rem 0 -0.05rem #f00, 6rem 1rem 0 -0.05rem #f00,
+      7rem 1rem 0 -0.05rem #f00, 8rem 1rem 0 -0.05rem #222,
+      9rem 1rem 0 -0.05rem #222, 10rem 1rem 0 -0.05rem #fff,
+      11rem 1rem 0 -0.05rem #fff, /* row 3 */ 0rem 2rem 0 -0.05rem #fff,
+      1rem 2rem 0 -0.05rem #222, 2rem 2rem 0 -0.05rem #f00,
+      3rem 2rem 0 -0.05rem #f00, 4rem 2rem 0 -0.05rem #f00,
+      5rem 2rem 0 -0.05rem #f00, 6rem 2rem 0 -0.05rem #f00,
+      7rem 2rem 0 -0.05rem #f00, 8rem 2rem 0 -0.05rem #f00,
+      9rem 2rem 0 -0.05rem #f00, 10rem 2rem 0 -0.05rem #222,
+      11rem 2rem 0 -0.05rem #fff, /* row 4 */ 0rem 3rem 0 -0.05rem #fff,
+      1rem 3rem 0 -0.05rem #222, 2rem 3rem 0 -0.05rem #f00,
+      3rem 3rem 0 -0.05rem #f00, 4rem 3rem 0 -0.05rem #f00,
+      5rem 3rem 0 -0.05rem #f00, 6rem 3rem 0 -0.05rem #f00,
+      7rem 3rem 0 -0.05rem #f00, 8rem 3rem 0 -0.05rem #f00,
+      9rem 3rem 0 -0.05rem #f00, 10rem 3rem 0 -0.05rem #222,
+      11rem 3rem 0 -0.05rem #fff, /* row 5 */ 0rem 4rem 0 -0.05rem #222,
+      1rem 4rem 0 -0.05rem #f00, 2rem 4rem 0 -0.05rem #f00,
+      3rem 4rem 0 -0.05rem #f00, 4rem 4rem 0 -0.05rem #f00,
+      5rem 4rem 0 -0.05rem #f00, 6rem 4rem 0 -0.05rem #f00,
+      7rem 4rem 0 -0.05rem #f00, 8rem 4rem 0 -0.05rem #f00,
+      9rem 4rem 0 -0.05rem #f00, 10rem 4rem 0 -0.05rem #f00,
+      11rem 4rem 0 -0.05rem #222, /* row 6 */ 0rem 5rem 0 -0.05rem #222,
+      1rem 5rem 0 -0.05rem #f00, 2rem 5rem 0 -0.05rem #f00,
+      3rem 5rem 0 -0.05rem #f00, 4rem 5rem 0 -0.05rem #f00,
+      5rem 5rem 0 -0.05rem #222, 6rem 5rem 0 -0.05rem #222,
+      7rem 5rem 0 -0.05rem #f00, 8rem 5rem 0 -0.05rem #f00,
+      9rem 5rem 0 -0.05rem #f00, 10rem 5rem 0 -0.05rem #f00,
+      11rem 5rem 0 -0.05rem #222, /* row 7 */ 0rem 6rem 0 -0.05rem #222,
+      1rem 6rem 0 -0.05rem #222, 2rem 6rem 0 -0.05rem #f00,
+      3rem 6rem 0 -0.05rem #f00, 4rem 6rem 0 -0.05rem #222,
+      5rem 6rem 0 -0.05rem #fff, 6rem 6rem 0 -0.05rem #fff,
+      7rem 6rem 0 -0.05rem #222, 8rem 6rem 0 -0.05rem #f00,
+      9rem 6rem 0 -0.05rem #f00, 10rem 6rem 0 -0.05rem #222,
+      11rem 6rem 0 -0.05rem #222, /* row 8 */ 0rem 7rem 0 -0.05rem #222,
+      1rem 7rem 0 -0.05rem #fff, 2rem 7rem 0 -0.05rem #222,
+      3rem 7rem 0 -0.05rem #222, 4rem 7rem 0 -0.05rem #222,
+      5rem 7rem 0 -0.05rem #fff, 6rem 7rem 0 -0.05rem #fff,
+      7rem 7rem 0 -0.05rem #222, 8rem 7rem 0 -0.05rem #222,
+      9rem 7rem 0 -0.05rem #222, 10rem 7rem 0 -0.05rem #fff,
+      11rem 7rem 0 -0.05rem #222, /* row 9 */ 0rem 8rem 0 -0.05rem #fff,
+      1rem 8rem 0 -0.05rem #222, 2rem 8rem 0 -0.05rem #fff,
+      3rem 8rem 0 -0.05rem #fff, 4rem 8rem 0 -0.05rem #fff,
+      5rem 8rem 0 -0.05rem #222, 6rem 8rem 0 -0.05rem #222,
+      7rem 8rem 0 -0.05rem #fff, 8rem 8rem 0 -0.05rem #fff,
+      9rem 8rem 0 -0.05rem #fff, 10rem 8rem 0 -0.05rem #222,
+      11rem 8rem 0 -0.05rem #fff, /* row 10 */ 0rem 9rem 0 -0.05rem #fff,
+      1rem 9rem 0 -0.05rem #222, 2rem 9rem 0 -0.05rem #fff,
+      3rem 9rem 0 -0.05rem #fff, 4rem 9rem 0 -0.05rem #fff,
+      5rem 9rem 0 -0.05rem #fff, 6rem 9rem 0 -0.05rem #fff,
+      7rem 9rem 0 -0.05rem #fff, 8rem 9rem 0 -0.05rem #fff,
+      9rem 9rem 0 -0.05rem #fff, 10rem 9rem 0 -0.05rem #222,
+      11rem 9rem 0 -0.05rem #fff, /* row 11 */ 0rem 10rem 0 -0.05rem #fff,
+      1rem 10rem 0 -0.05rem #fff, 2rem 10rem 0 -0.05rem #222,
+      3rem 10rem 0 -0.05rem #222, 4rem 10rem 0 -0.05rem #fff,
+      5rem 10rem 0 -0.05rem #fff, 6rem 10rem 0 -0.05rem #fff,
+      7rem 10rem 0 -0.05rem #fff, 8rem 10rem 0 -0.05rem #222,
+      9rem 10rem 0 -0.05rem #222, 10rem 10rem 0 -0.05rem #fff,
+      11rem 10rem 0 -0.05rem #fff, /* row 12 */ 0rem 11rem 0 -0.05rem #fff,
+      1rem 11rem 0 -0.05rem #fff, 2rem 11rem 0 -0.05rem #fff,
+      3rem 11rem 0 -0.05rem #fff, 4rem 11rem 0 -0.05rem #222,
+      5rem 11rem 0 -0.05rem #222, 6rem 11rem 0 -0.05rem #222,
+      7rem 11rem 0 -0.05rem #222, 8rem 11rem 0 -0.05rem #fff,
+      9rem 11rem 0 -0.05rem #fff, 10rem 11rem 0 -0.05rem #fff,
+      11rem 11rem 0 -0.05rem #fff;
   }
 `;
 

@@ -21,7 +21,6 @@ const fetchDefaultPokemons = async (count: number) => {
 
 const fetchMorePokemons = async (defaultData: PokemonList) => {
   const api = defaultData.next.split('v2');
-  console.log(api);
   const { data }: AxiosResponse<PokemonList> = await instance.get(api[1]);
 
   const payload: PokemonList = data;

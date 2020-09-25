@@ -13,7 +13,7 @@ interface RightPanelProps {
 
 export const RightPanel = ({ evolutions, pokemon }: RightPanelProps) => {
   return (
-    <Container className="col-12 lg-col-6">
+    <Container className="col-12 lg-col-6 p1">
       <Stats stats={pokemon.stats} />
       <Type badges={pokemon.types} />
       <Evolutions evolutions={evolutions} />

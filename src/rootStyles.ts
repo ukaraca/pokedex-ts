@@ -10,41 +10,28 @@ const globalCSS = css`
     min-height: 100vh;
   }
   html {
-    heigth: 100%;
     font-family: 'Press Start 2P', cursive;
     box-sizing: border-box;
     font-size: 15px;
   }
   body {
-    heigth: 100%;
     margin: 0;
     padding: 0;
-    background: linear-gradient(
-      15deg,
-      rgba(41, 41, 41, 1) 4%,
-      rgba(49, 49, 49, 1) 24%,
-      rgba(128, 128, 128, 1) 64%,
-      rgba(138, 138, 138, 1) 70%,
-      rgba(230, 230, 230, 1) 81%,
-      rgba(255, 255, 255, 1) 86%,
-      rgba(220, 220, 220, 1) 89%,
-      rgba(230, 230, 230, 1) 100%
-    );
-    background-color: #09a8ff;
-    background-blend-mode: overlay;
+    background: transparent
+      url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/50859/bit-tile-blue.gif)
+      repeat-x 50% 0;
+    background-repeat: repeat;
+    animation: infinite-shift-left 5000s linear;
   }
-
   .container {
     padding-right: 1rem;
     padding-left: 1rem;
     margin: 2rem auto 2rem auto;
     overflow: overlay;
   }
-
   img {
     image-rendering: pixelated;
   }
-
   .pokemon-sprite {
     width: 100%;
     display: flex;
@@ -80,6 +67,10 @@ const globalCSS = css`
     padding: 5px;
   }
 
+  .pokemon-badge {
+    width: 300px;
+  }
+
   @media (min-width: 768px) {
     .container {
       width: 750px;
@@ -93,6 +84,14 @@ const globalCSS = css`
   @media (min-width: 1200px) {
     .container {
       width: 1170px;
+    }
+  }
+  @keyframes infinite-shift-left {
+    0% {
+      background-position: 50000px;
+    }
+    100% {
+      background-position: 0;
     }
   }
 `;

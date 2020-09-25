@@ -54,7 +54,7 @@ export const LeftPanel = ({ data, descriptions }: LeftPanelProps) => {
   };
 
   return (
-    <Container className="col-12 lg-col-6 flex flex-column justify-between">
+    <Container className="col-12 lg-col-6 flex flex-column justify-start p1">
       <div className="nes-container is-rounded">
         {src && <Img src={src} alt={data.name} styles="pokemon-sprite" />}
       </div>

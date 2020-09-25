@@ -18,8 +18,9 @@ const Container = styled.section`
 
     justify-content: space-between;
   }
-  .nes-badge {
-    width: 300px;
+
+  @media (max-width: 1024px) {
+    margin-top: 50px !important;
   }
 `;
 

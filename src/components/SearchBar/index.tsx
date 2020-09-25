@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Container from './style';
 
-export const SearchBar = () => {
-  const [value, setValue] = useState('');
+interface SearchBarProps {
+  value?: string;
+  onSearch: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const SearchBar = ({ value, onSearch }: SearchBarProps) => {
   return (
-    <div className="nes-field title">
-      <input
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        type="text"
-        className="nes-input"
-        placeholder="Search Pokemons..."
-      />
-    </div>
+    <Container>
+      <div className="nes-field">
+        <input
+          list="pokemon-list"
+          value={value}
+          onChange={(e) => onSearch(e.target.value)}
+          type="text"
+          className="nes-input"
+          placeholder="Search Pokémons..."
+        />
+      </div>
+    </Container>
   );
 };

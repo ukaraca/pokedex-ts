@@ -18,6 +18,10 @@ const Container = styled.div`
     justify-content: space-evenly;
     padding: 0 10px 0 7px;
   }
+
+  p {
+    height: unset;
+  }
 `;
 
 export default Container;

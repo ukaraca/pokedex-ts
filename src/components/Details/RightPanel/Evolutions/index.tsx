@@ -16,7 +16,7 @@ export const Evolutions = ({ evolutions }: RightPanelProps) => {
           <div
             key={i}
             className="flex flex-column nes-pointer"
-            onClick={() => history.push(`/${item.id}`)}
+            onClick={() => history.push(`/pokemon/${item.id}`)}
           >
             <Img
               src={item.sprites.front_default || ' '}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MutableRefObject } from 'react';
 
 interface ImgProps {
   src: string;
